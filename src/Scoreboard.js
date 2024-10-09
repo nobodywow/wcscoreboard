@@ -23,7 +23,6 @@ class Scoreboard {
   getSummary() {
     return [...this.liveMatches].sort((a, b) => {
       const diff = b.getTotalScore() - a.getTotalScore();
-      console.log(diff);
       return diff === 0 ? b.kickoffDate - a.kickoffDate : diff;
     });
   }

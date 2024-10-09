@@ -19,9 +19,11 @@ describe('scoreboard tests', () => {
   });
 
   test('should get summary of ongoing matches', () => {
+    jest.useFakeTimers();
     const scoreboard = new Scoreboard();
     const match1 = scoreboard.startMatch('Liverpool', 'Arsenal');
     const match2 = scoreboard.startMatch('ManCity', 'Fulham');
+    jest.advanceTimersByTime(10);
     const match3 = scoreboard.startMatch('Wolves', 'Forest');
     const match4 = scoreboard.startMatch('Chelsea', 'Brighton');
 
